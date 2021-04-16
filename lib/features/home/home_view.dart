@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:health_educational/features/home/widgets/category_label.dart';
+import 'package:health_educational/features/home/widgets/diseases/disease_list.dart';
 import 'package:health_educational/features/home/widgets/heart_sliver_appbar.dart';
+import 'package:health_educational/features/home/widgets/symptoms/stmptom_list.dart';
 
 class HomeView extends StatefulWidget {
   @override
@@ -31,8 +34,19 @@ class _HomeViewState extends State<HomeView> {
             controller: controller,
           )
         ],
-        body: Center(
-          child: Text("Health Educational App"),
+        body: ListView(
+          padding: EdgeInsets.all(8),
+          children: [
+            CategoryLabel(
+              label: "Diseases",
+            ),
+            DiseaseList(),
+            SizedBox(height: 12),
+            CategoryLabel(
+              label: "Symptoms",
+            ),
+            SymptomList(),
+          ],
         ),
       ),
     );
