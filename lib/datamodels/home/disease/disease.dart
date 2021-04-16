@@ -3,11 +3,11 @@ part 'disease.g.dart';
 
 @JsonSerializable()
 class Disease {
-  int id;
-  String title;
-  String description;
-  String body;
-  Disease({
+  final int id;
+  final String title;
+  final String description;
+  final String body;
+  const Disease({
     required this.id,
     required this.title,
     required this.description,
