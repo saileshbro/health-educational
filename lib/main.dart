@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:health_educational/app/app.locator.dart';
 import 'package:health_educational/app/app.router.dart';
 import 'package:health_educational/theme/theme.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 void main() {
+  setupLocator();
   runApp(MyApp());
 }
 

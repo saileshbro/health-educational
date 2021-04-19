@@ -8,16 +8,18 @@ part of 'symptom.dart';
 
 Symptom _$SymptomFromJson(Map<String, dynamic> json) {
   return Symptom(
-    id: json['id'] as int,
-    title: json['title'] as String,
+    id: json['symptom_id'] as int,
+    symptom: json['symptom'] as String,
     description: json['description'] as String,
+    imageUrl: json['image_url'] as String,
     body: json['body'] as String,
   );
 }
 
 Map<String, dynamic> _$SymptomToJson(Symptom instance) => <String, dynamic>{
-      'id': instance.id,
-      'title': instance.title,
+      'symptom_id': instance.id,
+      'symptom': instance.symptom,
       'description': instance.description,
+      'image_url': instance.imageUrl,
       'body': instance.body,
     };

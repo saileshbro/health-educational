@@ -1,16 +1,21 @@
 import "package:json_annotation/json_annotation.dart";
 part 'symptom.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(
+  fieldRename: FieldRename.snake,
+)
 class Symptom {
+  @JsonKey(name: "symptom_id")
   final int id;
-  final String title;
+  final String symptom;
   final String description;
+  final String imageUrl;
   final String body;
   const Symptom({
     required this.id,
-    required this.title,
+    required this.symptom,
     required this.description,
+    required this.imageUrl,
     required this.body,
   });
   factory Symptom.fromJson(Map<String, dynamic> json) =>

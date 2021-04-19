@@ -8,9 +8,7 @@ class RAPIService implements IAPIService {
 
   @override
   Future<HomeResponseModel> getHomeData() async {
-    final Response<Map<String, dynamic>> _result = await dio.get(
-      "home",
-    );
+    final Response<Map<String, dynamic>> _result = await dio.get("/home");
     final value = HomeResponseModel.fromJson(_result.data!);
     return value;
   }

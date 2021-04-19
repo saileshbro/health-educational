@@ -1,5 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:health_educational/features/home/home_view.dart';
+import 'package:health_educational/features/home/home_viewmodel.dart';
+import 'package:health_educational/repository/home/i_home_repository.dart';
+import 'package:health_educational/repository/home/r_home_repository.dart';
 import 'package:health_educational/services/api/i_api_service.dart';
 import 'package:health_educational/services/api/r_api_service.dart';
 import 'package:health_educational/services/dio_service.dart';
@@ -20,5 +23,12 @@ import 'package:stacked/stacked_annotations.dart';
     classType: RAPIService,
     asType: IAPIService,
   ),
+  DependencyRegistration(
+    classType: RHomeRepository,
+    asType: IHomeRepository,
+  ),
+  Factory(
+    classType: HomeViewModel,
+  )
 ])
 class App {}

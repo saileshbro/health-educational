@@ -1,7 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:health_educational/datamodels/home/symptom/symptom.dart';
 
 class KSymptomCard extends StatelessWidget {
+  final Symptom symptom;
+
+  const KSymptomCard({Key? key, required this.symptom}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -12,8 +16,7 @@ class KSymptomCard extends StatelessWidget {
           children: <Widget>[
             Container(
               child: CachedNetworkImage(
-                imageUrl:
-                    "http://niroginepal.com/wp-content/uploads/2016/01/Cough-2-848x296.png",
+                imageUrl: symptom.imageUrl,
                 height: 160,
                 fit: BoxFit.cover,
               ),
@@ -41,7 +44,7 @@ class KSymptomCard extends StatelessWidget {
                 padding: EdgeInsets.only(left: 10, right: 10, bottom: 6),
                 color: Colors.white60,
                 child: Text(
-                  "Cough",
+                  symptom.symptom,
                   style: Theme.of(context).textTheme.subtitle1?.copyWith(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,

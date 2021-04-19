@@ -1,11 +1,15 @@
 import 'package:dio/dio.dart';
 import 'package:health_educational/app/app.logger.dart';
+import 'package:health_educational/constants/constants.dart';
 import 'package:health_educational/misc/network_failure.dart';
 import 'package:logger/logger.dart';
 
 class DioService {
   static Dio getDioObject() {
     Dio dio = Dio();
+    dio.options = BaseOptions(
+      baseUrl: Constants.kBaseUrl,
+    );
     Logger log = getLogger("DioService");
     dio.interceptors.add(InterceptorsWrapper(
       onRequest: (requestOptions, handler) {

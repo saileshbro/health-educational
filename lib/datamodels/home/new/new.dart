@@ -1,9 +1,12 @@
 import "package:json_annotation/json_annotation.dart";
 part 'new.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(
+  fieldRename: FieldRename.snake,
+)
 class New {
-  final int newsId;
+  @JsonKey(name: "news_id")
+  final int id;
   final String title;
   final String body;
   final String description;
@@ -13,7 +16,7 @@ class New {
   final DateTime updatedAt;
 
   const New({
-    required this.newsId,
+    required this.id,
     required this.title,
     required this.body,
     required this.description,

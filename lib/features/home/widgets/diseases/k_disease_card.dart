@@ -1,7 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:health_educational/datamodels/home/disease/disease.dart';
 
 class KDiseaseCard extends StatelessWidget {
+  final Disease disease;
+
+  const KDiseaseCard({Key? key, required this.disease}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -12,8 +16,7 @@ class KDiseaseCard extends StatelessWidget {
           children: <Widget>[
             Container(
               child: CachedNetworkImage(
-                imageUrl:
-                    "http://niroginepal.com/wp-content/uploads/2016/04/Acid-Reflux-Disease-1.png",
+                imageUrl: disease.imageUrl,
                 height: 160,
                 fit: BoxFit.cover,
               ),
@@ -41,7 +44,7 @@ class KDiseaseCard extends StatelessWidget {
                 padding: EdgeInsets.only(left: 10, right: 10, bottom: 6),
                 color: Colors.white60,
                 child: Text(
-                  "Acid Reflux Disease",
+                  disease.disease,
                   style: Theme.of(context).textTheme.subtitle1?.copyWith(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
