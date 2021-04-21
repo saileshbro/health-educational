@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:health_educational/app/app.locator.dart';
+import 'package:health_educational/common/ui/components/drawer/k_drawer.dart';
 import 'package:health_educational/datamodels/home/home_response_model.dart';
 import 'package:health_educational/features/home/home_viewmodel.dart';
 import 'package:health_educational/features/home/widgets/category_label.dart';
@@ -32,6 +33,7 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: KDrawer(),
       body: NestedScrollView(
         controller: controller,
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) =>

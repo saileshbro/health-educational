@@ -1,18 +1,31 @@
 import 'package:dio/dio.dart';
+import 'package:health_educational/common/ui/components/drawer/drawer_viewmodel.dart';
+import 'package:health_educational/features/disease/disease_view.dart';
+import 'package:health_educational/features/disease/disease_viewmodel.dart';
 import 'package:health_educational/features/home/home_view.dart';
 import 'package:health_educational/features/home/home_viewmodel.dart';
+import 'package:health_educational/repository/disease/i_disease_repository.dart';
+import 'package:health_educational/repository/disease/r_disease_repository.dart';
 import 'package:health_educational/repository/home/i_home_repository.dart';
 import 'package:health_educational/repository/home/r_home_repository.dart';
+import 'package:health_educational/repository/news/i_new_repository.dart';
+import 'package:health_educational/repository/news/r_new_repository.dart';
+import 'package:health_educational/repository/symptom/i_symptom_repository.dart';
+import 'package:health_educational/repository/symptom/r_symptom_repository.dart';
 import 'package:health_educational/services/api/i_api_service.dart';
 import 'package:health_educational/services/api/r_api_service.dart';
 import 'package:health_educational/services/dio_service.dart';
 import 'package:stacked/stacked_annotations.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 @StackedApp(routes: [
   MaterialRoute(
     page: HomeView,
     initial: true,
-  )
+  ),
+  MaterialRoute(
+    page: DiseaseView,
+  ),
 ], dependencies: [
   DependencyRegistration(
     classType: DioService,
@@ -27,8 +40,29 @@ import 'package:stacked/stacked_annotations.dart';
     classType: RHomeRepository,
     asType: IHomeRepository,
   ),
+  DependencyRegistration(
+    classType: RDiseaseRepository,
+    asType: IDiseaseRepository,
+  ),
+  DependencyRegistration(
+    classType: RSymptomRepository,
+    asType: ISymptomRepository,
+  ),
+  DependencyRegistration(
+    classType: RNewRepository,
+    asType: INewRepository,
+  ),
   Factory(
     classType: HomeViewModel,
+  ),
+  Factory(
+    classType: DiseaseViewModel,
+  ),
+  Singleton(
+    classType: NavigationService,
+  ),
+  Singleton(
+    classType: DrawerViewModel,
   )
 ])
 class App {}
