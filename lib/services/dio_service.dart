@@ -13,7 +13,7 @@ class DioService {
     Logger log = getLogger("DioService");
     dio.interceptors.add(InterceptorsWrapper(
       onRequest: (requestOptions, handler) {
-        log.d("DIO REQUEST ${requestOptions.method}",
+        log.d("DIO REQUEST ${requestOptions.method} ${requestOptions.uri.path}",
             requestOptions.baseUrl + requestOptions.uri.path);
         handler.next(requestOptions);
       },

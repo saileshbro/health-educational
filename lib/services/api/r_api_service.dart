@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:health_educational/app/app.locator.dart';
-import 'package:health_educational/datamodels/home/disease/disease_response_model.dart';
-import 'package:health_educational/datamodels/home/home_response_model.dart';
-import 'package:health_educational/datamodels/home/new/new_response_model.dart';
-import 'package:health_educational/datamodels/home/symptom/symptom_response_model.dart';
+import 'package:health_educational/datamodels/response_models/disease/disease_response_model.dart';
+import 'package:health_educational/datamodels/response_models/home/home_response_model.dart';
+import 'package:health_educational/datamodels/response_models/news/new_response_model.dart';
+import 'package:health_educational/datamodels/response_models/symptoms/symptom_response_model.dart';
 import 'package:health_educational/services/api/i_api_service.dart';
 
 class RAPIService implements IAPIService {
@@ -32,7 +32,7 @@ class RAPIService implements IAPIService {
 
   @override
   Future<SymptomResponseModel> getAllSymptoms() async {
-    final Response<Map<String, dynamic>> _result = await dio.get("/news");
+    final Response<Map<String, dynamic>> _result = await dio.get("/symptoms");
     final value = SymptomResponseModel.fromJson(_result.data!);
     return value;
   }

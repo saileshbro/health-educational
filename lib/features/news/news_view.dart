@@ -1,31 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:health_educational/app/app.locator.dart';
-import 'package:health_educational/datamodels/response_models/disease/disease_response_model.dart';
-import 'package:health_educational/features/disease/disease_viewmodel.dart';
-import 'package:health_educational/common/ui/widgets/diseases/k_disease_card.dart';
+import 'package:health_educational/common/ui/widgets/news/k_new_card.dart';
+import 'package:health_educational/datamodels/response_models/news/new_response_model.dart';
+
+import 'package:health_educational/features/news/news_viewmodel.dart';
 
 import 'package:stacked/stacked.dart';
 
-class DiseaseView extends StatelessWidget {
+class NewView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Diseases",
+          "News",
           style: TextStyle(
             color: Colors.red[700],
             fontWeight: FontWeight.bold,
           ),
         ),
       ),
-      body: ViewModelBuilder<DiseaseViewModel>.reactive(
-        viewModelBuilder: () => locator<DiseaseViewModel>(),
+      body: ViewModelBuilder<NewViewModel>.reactive(
+        viewModelBuilder: () => locator<NewViewModel>(),
         disposeViewModel: false,
         initialiseSpecialViewModelsOnce: true,
         builder: (
           BuildContext context,
-          DiseaseViewModel model,
+          NewViewModel model,
           Widget? child,
         ) {
           if (model.isBusy) {
@@ -33,13 +34,12 @@ class DiseaseView extends StatelessWidget {
               child: CircularProgressIndicator(),
             );
           }
-          final DiseaseResponseModel response = model.data;
+          final NewResponseModel response = model.data;
           return ListView.separated(
             padding: EdgeInsets.symmetric(horizontal: 12),
-            itemCount: response.diseases.length,
-            itemBuilder: (context, i) => KDiseaseCard(
-              disease: response.diseases[i],
-              extended: true,
+            itemCount: response.news.length,
+            itemBuilder: (context, i) => KNewsCard(
+              news: response.news[i],
             ),
             separatorBuilder: (_, __) => const SizedBox(height: 8),
           );

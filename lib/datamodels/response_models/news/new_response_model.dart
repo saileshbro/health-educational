@@ -1,4 +1,4 @@
-import 'package:health_educational/datamodels/home/new/new.dart';
+import 'package:health_educational/datamodels/models/new/new.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'new_response_model.g.dart';

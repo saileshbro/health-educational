@@ -1,4 +1,4 @@
-import 'package:health_educational/datamodels/home/disease/disease.dart';
+import 'package:health_educational/datamodels/models/disease/disease.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'disease_response_model.g.dart';

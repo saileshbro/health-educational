@@ -54,10 +54,12 @@ class _KDrawerState extends State<KDrawer> {
                 _ListTile(
                   label: "Symptoms",
                   logo: "assets/images/icons/symptoms.png",
+                  onPressed: model.toSymptoms,
                 ),
                 _ListTile(
                   label: "Health News",
                   logo: "assets/images/icons/news.png",
+                  onPressed: model.toNews,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),

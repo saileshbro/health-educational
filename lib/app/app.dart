@@ -2,8 +2,15 @@ import 'package:dio/dio.dart';
 import 'package:health_educational/common/ui/components/drawer/drawer_viewmodel.dart';
 import 'package:health_educational/features/disease/disease_view.dart';
 import 'package:health_educational/features/disease/disease_viewmodel.dart';
+import 'package:health_educational/features/disease/each_disease_view.dart';
 import 'package:health_educational/features/home/home_view.dart';
 import 'package:health_educational/features/home/home_viewmodel.dart';
+import 'package:health_educational/features/news/each_news_view.dart';
+import 'package:health_educational/features/news/news_view.dart';
+import 'package:health_educational/features/news/news_viewmodel.dart';
+import 'package:health_educational/features/symptom/each_symptom_view.dart';
+import 'package:health_educational/features/symptom/symptom_view.dart';
+import 'package:health_educational/features/symptom/symptom_viewmodel.dart';
 import 'package:health_educational/repository/disease/i_disease_repository.dart';
 import 'package:health_educational/repository/disease/r_disease_repository.dart';
 import 'package:health_educational/repository/home/i_home_repository.dart';
@@ -25,6 +32,21 @@ import 'package:stacked_services/stacked_services.dart';
   ),
   MaterialRoute(
     page: DiseaseView,
+  ),
+  MaterialRoute(
+    page: SymptomView,
+  ),
+  MaterialRoute(
+    page: NewView,
+  ),
+  MaterialRoute(
+    page: EachDiseaseView,
+  ),
+  MaterialRoute(
+    page: EachNewView,
+  ),
+  MaterialRoute(
+    page: EachSymptomView,
   ),
 ], dependencies: [
   DependencyRegistration(
@@ -55,8 +77,14 @@ import 'package:stacked_services/stacked_services.dart';
   Factory(
     classType: HomeViewModel,
   ),
-  Factory(
+  Singleton(
     classType: DiseaseViewModel,
+  ),
+  Singleton(
+    classType: SymptomViewModel,
+  ),
+  Singleton(
+    classType: NewViewModel,
   ),
   Singleton(
     classType: NavigationService,

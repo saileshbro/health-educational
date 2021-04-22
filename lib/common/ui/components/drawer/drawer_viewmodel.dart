@@ -10,4 +10,15 @@ class DrawerViewModel extends BaseViewModel {
       navigationService.navigateTo(Routes.diseaseView);
     }
   }
+
+  void toSymptoms() {
+    if (navigationService.currentRoute != Routes.symptomView) {
+      navigationService.navigateTo(Routes.symptomView);
+    }
+  }
+    void toNews() {
+    if (navigationService.currentRoute != Routes.newView) {
+      navigationService.navigateTo(Routes.newView);
+    }
+  }
 }

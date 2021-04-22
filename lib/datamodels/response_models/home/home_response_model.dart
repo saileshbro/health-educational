@@ -1,7 +1,7 @@
-import 'package:health_educational/datamodels/home/disease/disease.dart';
-import 'package:health_educational/datamodels/home/drug/drug.dart';
-import 'package:health_educational/datamodels/home/new/new.dart';
-import 'package:health_educational/datamodels/home/symptom/symptom.dart';
+import 'package:health_educational/datamodels/models/disease/disease.dart';
+import 'package:health_educational/datamodels/models/drug/drug.dart';
+import 'package:health_educational/datamodels/models/new/new.dart';
+import 'package:health_educational/datamodels/models/symptom/symptom.dart';
 import 'package:json_annotation/json_annotation.dart';
 part 'home_response_model.g.dart';
 

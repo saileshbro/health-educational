@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:health_educational/app/app.locator.dart';
 import 'package:health_educational/common/ui/components/drawer/k_drawer.dart';
-import 'package:health_educational/datamodels/home/home_response_model.dart';
+import 'package:health_educational/datamodels/response_models/home/home_response_model.dart';
 import 'package:health_educational/features/home/home_viewmodel.dart';
-import 'package:health_educational/features/home/widgets/category_label.dart';
-import 'package:health_educational/features/home/widgets/diseases/disease_list.dart';
+import 'package:health_educational/common/ui/widgets/category_label.dart';
 import 'package:health_educational/features/home/widgets/drugs/drug_list.dart';
-import 'package:health_educational/features/home/widgets/heart_sliver_appbar.dart';
+import 'package:health_educational/common/ui/widgets/heart_sliver_appbar.dart';
 import 'package:health_educational/features/home/widgets/news/news_list.dart';
 import 'package:health_educational/features/home/widgets/symptoms/stmptom_list.dart';
+import 'package:health_educational/features/home/widgets/diseases/disease_list.dart';
 import 'package:stacked/stacked.dart';
 
 class HomeView extends StatefulWidget {

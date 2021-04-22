@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:health_educational/datamodels/home/disease/disease.dart';
-import 'package:health_educational/features/home/widgets/diseases/k_disease_card.dart';
+import 'package:health_educational/common/ui/widgets/diseases/k_disease_card.dart';
+import 'package:health_educational/datamodels/models/disease/disease.dart';
 
 class DiseaseList extends StatelessWidget {
   final List<Disease> diseases;

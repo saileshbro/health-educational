@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:health_educational/datamodels/home/drug/drug.dart';
+import 'package:health_educational/datamodels/models/drug/drug.dart';
 
 class KDrugCard extends StatelessWidget {
   final Drug drug;

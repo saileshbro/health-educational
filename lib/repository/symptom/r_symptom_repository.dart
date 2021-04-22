@@ -1,5 +1,5 @@
 import 'package:health_educational/app/app.locator.dart';
-import 'package:health_educational/datamodels/home/symptom/symptom_response_model.dart';
+import 'package:health_educational/datamodels/response_models/symptoms/symptom_response_model.dart';
 import 'package:health_educational/misc/network_failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:health_educational/repository/symptom/i_symptom_repository.dart';

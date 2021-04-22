@@ -1,5 +1,5 @@
 import 'package:health_educational/app/app.locator.dart';
-import 'package:health_educational/datamodels/home/home_response_model.dart';
+import 'package:health_educational/datamodels/response_models/home/home_response_model.dart';
 import 'package:health_educational/repository/home/i_home_repository.dart';
 import 'package:stacked/stacked.dart';
 

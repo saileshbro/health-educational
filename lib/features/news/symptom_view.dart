@@ -1,31 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:health_educational/app/app.locator.dart';
-import 'package:health_educational/datamodels/response_models/disease/disease_response_model.dart';
-import 'package:health_educational/features/disease/disease_viewmodel.dart';
-import 'package:health_educational/common/ui/widgets/diseases/k_disease_card.dart';
+import 'package:health_educational/common/ui/widgets/symptoms/k_symptom_card.dart';
+import 'package:health_educational/datamodels/response_models/symptoms/symptom_response_model.dart';
+
+import 'package:health_educational/features/symptom/symptom_viewmodel.dart';
 
 import 'package:stacked/stacked.dart';
 
-class DiseaseView extends StatelessWidget {
+class SymptomView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Diseases",
+          "Symptoms",
           style: TextStyle(
             color: Colors.red[700],
             fontWeight: FontWeight.bold,
           ),
         ),
       ),
-      body: ViewModelBuilder<DiseaseViewModel>.reactive(
-        viewModelBuilder: () => locator<DiseaseViewModel>(),
+      body: ViewModelBuilder<SymptomViewModel>.reactive(
+        viewModelBuilder: () => locator<SymptomViewModel>(),
         disposeViewModel: false,
         initialiseSpecialViewModelsOnce: true,
         builder: (
           BuildContext context,
-          DiseaseViewModel model,
+          SymptomViewModel model,
           Widget? child,
         ) {
           if (model.isBusy) {
@@ -33,12 +34,12 @@ class DiseaseView extends StatelessWidget {
               child: CircularProgressIndicator(),
             );
           }
-          final DiseaseResponseModel response = model.data;
+          final SymptomResponseModel response = model.data;
           return ListView.separated(
             padding: EdgeInsets.symmetric(horizontal: 12),
-            itemCount: response.diseases.length,
-            itemBuilder: (context, i) => KDiseaseCard(
-              disease: response.diseases[i],
+            itemCount: response.symptoms.length,
+            itemBuilder: (context, i) => KSymptomCard(
+              symptom: response.symptoms[i],
               extended: true,
             ),
             separatorBuilder: (_, __) => const SizedBox(height: 8),

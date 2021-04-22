@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:health_educational/datamodels/home/new/new.dart';
-import 'package:health_educational/features/home/widgets/news/k_new_card.dart';
+import 'package:health_educational/common/ui/widgets/news/k_new_card.dart';
+import 'package:health_educational/datamodels/models/new/new.dart';
 
 class NewsList extends StatelessWidget {
   final List<New> news;

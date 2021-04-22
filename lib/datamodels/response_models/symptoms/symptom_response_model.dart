@@ -1,4 +1,4 @@
-import 'package:health_educational/datamodels/home/symptom/symptom.dart';
+import 'package:health_educational/datamodels/models/symptom/symptom.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'symptom_response_model.g.dart';
