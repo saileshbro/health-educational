@@ -3,6 +3,8 @@ import 'package:health_educational/common/ui/components/drawer/drawer_viewmodel.
 import 'package:health_educational/features/disease/disease_view.dart';
 import 'package:health_educational/features/disease/disease_viewmodel.dart';
 import 'package:health_educational/features/disease/each_disease_view.dart';
+import 'package:health_educational/features/drug/each_drug_view.dart';
+import 'package:health_educational/features/health_tools/all_tools_view.dart';
 import 'package:health_educational/features/home/home_view.dart';
 import 'package:health_educational/features/home/home_viewmodel.dart';
 import 'package:health_educational/features/news/each_news_view.dart';
@@ -47,6 +49,12 @@ import 'package:stacked_services/stacked_services.dart';
   ),
   MaterialRoute(
     page: EachSymptomView,
+  ),
+  MaterialRoute(
+    page: EachDrugView,
+  ),
+  MaterialRoute(
+    page: AllToolsView,
   ),
 ], dependencies: [
   DependencyRegistration(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:health_educational/app/app.locator.dart';
 import 'package:health_educational/common/ui/components/drawer/drawer_viewmodel.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 class KDrawer extends StatefulWidget {
   @override
@@ -38,6 +39,7 @@ class _KDrawerState extends State<KDrawer> {
                 _ListTile(
                   label: "Home",
                   logo: "assets/images/icons/home.png",
+                  onPressed: () => locator<NavigationService>().back(),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -71,6 +73,7 @@ class _KDrawerState extends State<KDrawer> {
                 _ListTile(
                   label: "Health Tools and Tips",
                   logo: "assets/images/icons/healthtool.png",
+                  onPressed: model.toHealthTools,
                 )
               ],
             );

@@ -10,10 +10,13 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
 import '../datamodels/models/disease/disease.dart';
+import '../datamodels/models/drug/drug.dart';
 import '../datamodels/models/new/new.dart';
 import '../datamodels/models/symptom/symptom.dart';
 import '../features/disease/disease_view.dart';
 import '../features/disease/each_disease_view.dart';
+import '../features/drug/each_drug_view.dart';
+import '../features/health_tools/all_tools_view.dart';
 import '../features/home/home_view.dart';
 import '../features/news/each_news_view.dart';
 import '../features/news/news_view.dart';
@@ -28,6 +31,8 @@ class Routes {
   static const String eachDiseaseView = '/each-disease-view';
   static const String eachNewView = '/each-new-view';
   static const String eachSymptomView = '/each-symptom-view';
+  static const String eachDrugView = '/each-drug-view';
+  static const String allToolsView = '/all-tools-view';
   static const all = <String>{
     homeView,
     diseaseView,
@@ -36,6 +41,8 @@ class Routes {
     eachDiseaseView,
     eachNewView,
     eachSymptomView,
+    eachDrugView,
+    allToolsView,
   };
 }
 
@@ -50,6 +57,8 @@ class StackedRouter extends RouterBase {
     RouteDef(Routes.eachDiseaseView, page: EachDiseaseView),
     RouteDef(Routes.eachNewView, page: EachNewView),
     RouteDef(Routes.eachSymptomView, page: EachSymptomView),
+    RouteDef(Routes.eachDrugView, page: EachDrugView),
+    RouteDef(Routes.allToolsView, page: AllToolsView),
   ];
   @override
   Map<Type, StackedRouteFactory> get pagesMap => _pagesMap;
@@ -108,6 +117,22 @@ class StackedRouter extends RouterBase {
         settings: data,
       );
     },
+    EachDrugView: (data) {
+      var args = data.getArgs<EachDrugViewArguments>(nullOk: false);
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => EachDrugView(
+          key: args.key,
+          drug: args.drug,
+        ),
+        settings: data,
+      );
+    },
+    AllToolsView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => AllToolsView(),
+        settings: data,
+      );
+    },
   };
 }
 
@@ -134,4 +159,11 @@ class EachSymptomViewArguments {
   final Key? key;
   final Symptom symptom;
   EachSymptomViewArguments({this.key, required this.symptom});
+}
+
+/// EachDrugView arguments holder class
+class EachDrugViewArguments {
+  final Key? key;
+  final Drug drug;
+  EachDrugViewArguments({this.key, required this.drug});
 }
