@@ -5,6 +5,8 @@ import 'package:health_educational/features/disease/disease_viewmodel.dart';
 import 'package:health_educational/features/disease/each_disease_view.dart';
 import 'package:health_educational/features/drug/each_drug_view.dart';
 import 'package:health_educational/features/health_tools/all_tools_view.dart';
+import 'package:health_educational/features/health_tools/drug_information/drug_information_view.dart';
+import 'package:health_educational/features/health_tools/drug_information/drug_information_viewmodel.dart';
 import 'package:health_educational/features/home/home_view.dart';
 import 'package:health_educational/features/home/home_viewmodel.dart';
 import 'package:health_educational/features/news/each_news_view.dart';
@@ -15,6 +17,8 @@ import 'package:health_educational/features/symptom/symptom_view.dart';
 import 'package:health_educational/features/symptom/symptom_viewmodel.dart';
 import 'package:health_educational/repository/disease/i_disease_repository.dart';
 import 'package:health_educational/repository/disease/r_disease_repository.dart';
+import 'package:health_educational/repository/drug/i_drug_repository.dart';
+import 'package:health_educational/repository/drug/r_drug_repository.dart';
 import 'package:health_educational/repository/home/i_home_repository.dart';
 import 'package:health_educational/repository/home/r_home_repository.dart';
 import 'package:health_educational/repository/news/i_new_repository.dart';
@@ -56,6 +60,9 @@ import 'package:stacked_services/stacked_services.dart';
   MaterialRoute(
     page: AllToolsView,
   ),
+  MaterialRoute(
+    page: DrugInformationView,
+  ),
 ], dependencies: [
   DependencyRegistration(
     classType: DioService,
@@ -82,6 +89,10 @@ import 'package:stacked_services/stacked_services.dart';
     classType: RNewRepository,
     asType: INewRepository,
   ),
+  DependencyRegistration(
+    classType: RDrugRepository,
+    asType: IDrugRepository,
+  ),
   Factory(
     classType: HomeViewModel,
   ),
@@ -99,6 +110,9 @@ import 'package:stacked_services/stacked_services.dart';
   ),
   Singleton(
     classType: DrawerViewModel,
+  ),
+  Singleton(
+    classType: DrugInformationViewModel,
   )
 ])
 class App {}

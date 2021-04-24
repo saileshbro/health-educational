@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:health_educational/app/app.locator.dart';
+import 'package:health_educational/app/app.router.dart';
 import 'package:health_educational/features/health_tools/widgets/k_tools_card.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 class AllToolsView extends StatelessWidget {
   @override
@@ -28,6 +31,9 @@ class AllToolsView extends StatelessWidget {
             KToolCard(
               imageUrl: "assets/images/icons/medicine.png",
               name: "Information on Common Drugs",
+              onPressed: () => locator<NavigationService>().navigateTo(
+                Routes.drugInformationView,
+              ),
             ),
             KToolCard(
               imageUrl: "assets/images/icons/firstaid.png",

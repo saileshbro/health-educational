@@ -12,11 +12,14 @@ import 'package:stacked_services/stacked_services.dart';
 
 import '../common/ui/components/drawer/drawer_viewmodel.dart';
 import '../features/disease/disease_viewmodel.dart';
+import '../features/health_tools/drug_information/drug_information_viewmodel.dart';
 import '../features/home/home_viewmodel.dart';
 import '../features/news/news_viewmodel.dart';
 import '../features/symptom/symptom_viewmodel.dart';
 import '../repository/disease/i_disease_repository.dart';
 import '../repository/disease/r_disease_repository.dart';
+import '../repository/drug/i_drug_repository.dart';
+import '../repository/drug/r_drug_repository.dart';
 import '../repository/home/i_home_repository.dart';
 import '../repository/home/r_home_repository.dart';
 import '../repository/news/i_new_repository.dart';
@@ -36,10 +39,12 @@ void setupLocator() {
   locator.registerSingleton<IDiseaseRepository>(RDiseaseRepository());
   locator.registerSingleton<ISymptomRepository>(RSymptomRepository());
   locator.registerSingleton<INewRepository>(RNewRepository());
+  locator.registerSingleton<IDrugRepository>(RDrugRepository());
   locator.registerFactory(() => HomeViewModel());
   locator.registerSingleton(DiseaseViewModel());
   locator.registerSingleton(SymptomViewModel());
   locator.registerSingleton(NewViewModel());
   locator.registerSingleton(NavigationService());
   locator.registerSingleton(DrawerViewModel());
+  locator.registerSingleton(DrugInformationViewModel());
 }

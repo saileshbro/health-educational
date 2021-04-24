@@ -17,6 +17,7 @@ import '../features/disease/disease_view.dart';
 import '../features/disease/each_disease_view.dart';
 import '../features/drug/each_drug_view.dart';
 import '../features/health_tools/all_tools_view.dart';
+import '../features/health_tools/drug_information/drug_information_view.dart';
 import '../features/home/home_view.dart';
 import '../features/news/each_news_view.dart';
 import '../features/news/news_view.dart';
@@ -33,6 +34,7 @@ class Routes {
   static const String eachSymptomView = '/each-symptom-view';
   static const String eachDrugView = '/each-drug-view';
   static const String allToolsView = '/all-tools-view';
+  static const String drugInformationView = '/drug-information-view';
   static const all = <String>{
     homeView,
     diseaseView,
@@ -43,6 +45,7 @@ class Routes {
     eachSymptomView,
     eachDrugView,
     allToolsView,
+    drugInformationView,
   };
 }
 
@@ -59,6 +62,7 @@ class StackedRouter extends RouterBase {
     RouteDef(Routes.eachSymptomView, page: EachSymptomView),
     RouteDef(Routes.eachDrugView, page: EachDrugView),
     RouteDef(Routes.allToolsView, page: AllToolsView),
+    RouteDef(Routes.drugInformationView, page: DrugInformationView),
   ];
   @override
   Map<Type, StackedRouteFactory> get pagesMap => _pagesMap;
@@ -130,6 +134,12 @@ class StackedRouter extends RouterBase {
     AllToolsView: (data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => AllToolsView(),
+        settings: data,
+      );
+    },
+    DrugInformationView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => DrugInformationView(),
         settings: data,
       );
     },

@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:health_educational/app/app.locator.dart';
 import 'package:health_educational/datamodels/response_models/disease/disease_response_model.dart';
+import 'package:health_educational/datamodels/response_models/drug/drug_search_response_model.dart';
 import 'package:health_educational/datamodels/response_models/home/home_response_model.dart';
 import 'package:health_educational/datamodels/response_models/news/new_response_model.dart';
 import 'package:health_educational/datamodels/response_models/symptoms/symptom_response_model.dart';
@@ -34,6 +35,14 @@ class RAPIService implements IAPIService {
   Future<SymptomResponseModel> getAllSymptoms() async {
     final Response<Map<String, dynamic>> _result = await dio.get("/symptoms");
     final value = SymptomResponseModel.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<DrugSearchResponseModel> searchDrugFromQuery(String query) async {
+    final Response<Map<String, dynamic>> _result =
+        await dio.get("/drugs/search", queryParameters: {"query": query});
+    final value = DrugSearchResponseModel.fromJson(_result.data!);
     return value;
   }
 }
