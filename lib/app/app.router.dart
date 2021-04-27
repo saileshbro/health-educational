@@ -11,6 +11,7 @@ import 'package:stacked/stacked.dart';
 
 import '../datamodels/models/disease/disease.dart';
 import '../datamodels/models/drug/drug.dart';
+import '../datamodels/models/first_aid/first_aid.dart';
 import '../datamodels/models/new/new.dart';
 import '../datamodels/models/symptom/symptom.dart';
 import '../features/disease/disease_view.dart';
@@ -18,6 +19,8 @@ import '../features/disease/each_disease_view.dart';
 import '../features/drug/each_drug_view.dart';
 import '../features/health_tools/all_tools_view.dart';
 import '../features/health_tools/drug_information/drug_information_view.dart';
+import '../features/health_tools/first_aid/each_first_aid_view.dart';
+import '../features/health_tools/first_aid/first_aid_view.dart';
 import '../features/home/home_view.dart';
 import '../features/news/each_news_view.dart';
 import '../features/news/news_view.dart';
@@ -33,8 +36,10 @@ class Routes {
   static const String eachNewView = '/each-new-view';
   static const String eachSymptomView = '/each-symptom-view';
   static const String eachDrugView = '/each-drug-view';
+  static const String eachFirstAidView = '/each-first-aid-view';
   static const String allToolsView = '/all-tools-view';
   static const String drugInformationView = '/drug-information-view';
+  static const String firstAidView = '/first-aid-view';
   static const all = <String>{
     homeView,
     diseaseView,
@@ -44,8 +49,10 @@ class Routes {
     eachNewView,
     eachSymptomView,
     eachDrugView,
+    eachFirstAidView,
     allToolsView,
     drugInformationView,
+    firstAidView,
   };
 }
 
@@ -61,8 +68,10 @@ class StackedRouter extends RouterBase {
     RouteDef(Routes.eachNewView, page: EachNewView),
     RouteDef(Routes.eachSymptomView, page: EachSymptomView),
     RouteDef(Routes.eachDrugView, page: EachDrugView),
+    RouteDef(Routes.eachFirstAidView, page: EachFirstAidView),
     RouteDef(Routes.allToolsView, page: AllToolsView),
     RouteDef(Routes.drugInformationView, page: DrugInformationView),
+    RouteDef(Routes.firstAidView, page: FirstAidView),
   ];
   @override
   Map<Type, StackedRouteFactory> get pagesMap => _pagesMap;
@@ -131,6 +140,16 @@ class StackedRouter extends RouterBase {
         settings: data,
       );
     },
+    EachFirstAidView: (data) {
+      var args = data.getArgs<EachFirstAidViewArguments>(nullOk: false);
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => EachFirstAidView(
+          key: args.key,
+          firstAid: args.firstAid,
+        ),
+        settings: data,
+      );
+    },
     AllToolsView: (data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => AllToolsView(),
@@ -140,6 +159,12 @@ class StackedRouter extends RouterBase {
     DrugInformationView: (data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => DrugInformationView(),
+        settings: data,
+      );
+    },
+    FirstAidView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => FirstAidView(),
         settings: data,
       );
     },
@@ -176,4 +201,11 @@ class EachDrugViewArguments {
   final Key? key;
   final Drug drug;
   EachDrugViewArguments({this.key, required this.drug});
+}
+
+/// EachFirstAidView arguments holder class
+class EachFirstAidViewArguments {
+  final Key? key;
+  final FirstAid firstAid;
+  EachFirstAidViewArguments({this.key, required this.firstAid});
 }
