@@ -1,5 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:health_educational/common/ui/components/drawer/drawer_viewmodel.dart';
+import 'package:health_educational/features/bmi/bmi_calculator_view.dart';
+import 'package:health_educational/features/bmi/bmi_calculator_view_model.dart';
+import 'package:health_educational/features/bmi/bmi_result_view.dart';
 import 'package:health_educational/features/disease/disease_view.dart';
 import 'package:health_educational/features/disease/disease_viewmodel.dart';
 import 'package:health_educational/features/disease/each_disease_view.dart';
@@ -74,6 +77,12 @@ import 'package:stacked_services/stacked_services.dart';
   MaterialRoute(
     page: FirstAidView,
   ),
+  MaterialRoute(
+    page: BMICalculatorView,
+  ),
+  MaterialRoute(
+    page: BMIResultView,
+  ),
 ], dependencies: [
   DependencyRegistration(
     classType: DioService,
@@ -131,6 +140,9 @@ import 'package:stacked_services/stacked_services.dart';
   ),
   Singleton(
     classType: DrugInformationViewModel,
+  ),
+  Singleton(
+    classType: BMICalculatorViewModel,
   )
 ])
 class App {}

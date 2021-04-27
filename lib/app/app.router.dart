@@ -14,6 +14,8 @@ import '../datamodels/models/drug/drug.dart';
 import '../datamodels/models/first_aid/first_aid.dart';
 import '../datamodels/models/new/new.dart';
 import '../datamodels/models/symptom/symptom.dart';
+import '../features/bmi/bmi_calculator_view.dart';
+import '../features/bmi/bmi_result_view.dart';
 import '../features/disease/disease_view.dart';
 import '../features/disease/each_disease_view.dart';
 import '../features/drug/each_drug_view.dart';
@@ -40,6 +42,8 @@ class Routes {
   static const String allToolsView = '/all-tools-view';
   static const String drugInformationView = '/drug-information-view';
   static const String firstAidView = '/first-aid-view';
+  static const String bMICalculatorView = '/b-mi-calculator-view';
+  static const String bMIResultView = '/b-mi-result-view';
   static const all = <String>{
     homeView,
     diseaseView,
@@ -53,6 +57,8 @@ class Routes {
     allToolsView,
     drugInformationView,
     firstAidView,
+    bMICalculatorView,
+    bMIResultView,
   };
 }
 
@@ -72,6 +78,8 @@ class StackedRouter extends RouterBase {
     RouteDef(Routes.allToolsView, page: AllToolsView),
     RouteDef(Routes.drugInformationView, page: DrugInformationView),
     RouteDef(Routes.firstAidView, page: FirstAidView),
+    RouteDef(Routes.bMICalculatorView, page: BMICalculatorView),
+    RouteDef(Routes.bMIResultView, page: BMIResultView),
   ];
   @override
   Map<Type, StackedRouteFactory> get pagesMap => _pagesMap;
@@ -168,6 +176,22 @@ class StackedRouter extends RouterBase {
         settings: data,
       );
     },
+    BMICalculatorView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => BMICalculatorView(),
+        settings: data,
+      );
+    },
+    BMIResultView: (data) {
+      var args = data.getArgs<BMIResultViewArguments>(nullOk: false);
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => BMIResultView(
+          key: args.key,
+          bmi: args.bmi,
+        ),
+        settings: data,
+      );
+    },
   };
 }
 
@@ -208,4 +232,11 @@ class EachFirstAidViewArguments {
   final Key? key;
   final FirstAid firstAid;
   EachFirstAidViewArguments({this.key, required this.firstAid});
+}
+
+/// BMIResultView arguments holder class
+class BMIResultViewArguments {
+  final Key? key;
+  final double bmi;
+  BMIResultViewArguments({this.key, required this.bmi});
 }

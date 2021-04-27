@@ -45,6 +45,9 @@ class AllToolsView extends StatelessWidget {
             KToolCard(
               imageUrl: "assets/images/icons/bmi.png",
               name: "BMI Calculator",
+              onPressed: () => locator<NavigationService>().navigateTo(
+                Routes.bMICalculatorView,
+              ),
             ),
             KToolCard(
               imageUrl: "assets/images/icons/blooddonation.png",

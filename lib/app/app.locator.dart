@@ -11,6 +11,7 @@ import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 import '../common/ui/components/drawer/drawer_viewmodel.dart';
+import '../features/bmi/bmi_calculator_view_model.dart';
 import '../features/disease/disease_viewmodel.dart';
 import '../features/health_tools/drug_information/drug_information_viewmodel.dart';
 import '../features/health_tools/first_aid/first_aid_viewmodel.dart';
@@ -52,4 +53,5 @@ void setupLocator() {
   locator.registerSingleton(NavigationService());
   locator.registerSingleton(DrawerViewModel());
   locator.registerSingleton(DrugInformationViewModel());
+  locator.registerSingleton(BMICalculatorViewModel());
 }
