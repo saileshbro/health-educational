@@ -9,6 +9,9 @@ import 'package:health_educational/features/disease/disease_view.dart';
 import 'package:health_educational/features/disease/disease_viewmodel.dart';
 import 'package:health_educational/features/disease/each_disease_view.dart';
 import 'package:health_educational/features/drug/each_drug_view.dart';
+import 'package:health_educational/features/food_tips/each_food_tip_view.dart';
+import 'package:health_educational/features/food_tips/food_tips_view.dart';
+import 'package:health_educational/features/food_tips/food_tips_view_model.dart';
 import 'package:health_educational/features/health_tools/all_tools_view.dart';
 import 'package:health_educational/features/health_tools/drug_information/drug_information_view.dart';
 import 'package:health_educational/features/health_tools/drug_information/drug_information_viewmodel.dart';
@@ -29,6 +32,8 @@ import 'package:health_educational/repository/drug/i_drug_repository.dart';
 import 'package:health_educational/repository/drug/r_drug_repository.dart';
 import 'package:health_educational/repository/first_aid/i_first_aid_repository.dart';
 import 'package:health_educational/repository/first_aid/r_first_aid_repository.dart';
+import 'package:health_educational/repository/food_tip/i_food_tips_repository.dart';
+import 'package:health_educational/repository/food_tip/r_food_tips_repository.dart';
 import 'package:health_educational/repository/home/i_home_repository.dart';
 import 'package:health_educational/repository/home/r_home_repository.dart';
 import 'package:health_educational/repository/news/i_new_repository.dart';
@@ -88,6 +93,12 @@ import 'package:stacked_services/stacked_services.dart';
   MaterialRoute(
     page: BloodDonationView,
   ),
+  MaterialRoute(
+    page: FoodTipsView,
+  ),
+  MaterialRoute(
+    page: EachFoodTipView,
+  ),
 ], dependencies: [
   DependencyRegistration(
     classType: DioService,
@@ -122,6 +133,10 @@ import 'package:stacked_services/stacked_services.dart';
     classType: RFirstAidRepository,
     asType: IFirstAidRepository,
   ),
+  DependencyRegistration(
+    classType: RFoodTipsRepository,
+    asType: IFoodTipsRepository,
+  ),
   Factory(
     classType: HomeViewModel,
   ),
@@ -151,6 +166,9 @@ import 'package:stacked_services/stacked_services.dart';
   ),
   Singleton(
     classType: BMICalculatorViewModel,
-  )
+  ),
+  Singleton(
+    classType: FoodTipsViewModel,
+  ),
 ])
 class App {}

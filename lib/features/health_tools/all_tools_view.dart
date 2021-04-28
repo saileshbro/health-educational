@@ -27,6 +27,9 @@ class AllToolsView extends StatelessWidget {
             KToolCard(
               imageUrl: "assets/images/icons/diet.png",
               name: "Food Tips",
+              onPressed: () => locator<NavigationService>().navigateTo(
+                Routes.foodTipsView,
+              ),
             ),
             KToolCard(
               imageUrl: "assets/images/icons/medicine.png",

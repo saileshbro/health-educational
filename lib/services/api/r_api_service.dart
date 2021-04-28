@@ -3,6 +3,7 @@ import 'package:health_educational/app/app.locator.dart';
 import 'package:health_educational/datamodels/response_models/disease/disease_response_model.dart';
 import 'package:health_educational/datamodels/response_models/drug/drug_search_response_model.dart';
 import 'package:health_educational/datamodels/response_models/first_aid/first_aid_response_model.dart';
+import 'package:health_educational/datamodels/response_models/food_tip/food_tips_response_model.dart';
 import 'package:health_educational/datamodels/response_models/home/home_response_model.dart';
 import 'package:health_educational/datamodels/response_models/news/new_response_model.dart';
 import 'package:health_educational/datamodels/response_models/symptoms/symptom_response_model.dart';
@@ -51,6 +52,13 @@ class RAPIService implements IAPIService {
   Future<FirstAidResponseModel> getAllFirstAids() async {
     final Response<Map<String, dynamic>> _result = await dio.get("/firstaids");
     final value = FirstAidResponseModel.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<FoodTipsResponseModel> getAllFoodTips() async {
+    final Response<Map<String, dynamic>> _result = await dio.get("/foodtips");
+    final value = FoodTipsResponseModel.fromJson(_result.data!);
     return value;
   }
 }

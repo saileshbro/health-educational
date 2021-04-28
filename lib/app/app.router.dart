@@ -12,6 +12,7 @@ import 'package:stacked/stacked.dart';
 import '../datamodels/models/disease/disease.dart';
 import '../datamodels/models/drug/drug.dart';
 import '../datamodels/models/first_aid/first_aid.dart';
+import '../datamodels/models/food_tip/food_tip.dart';
 import '../datamodels/models/new/new.dart';
 import '../datamodels/models/symptom/symptom.dart';
 import '../features/blood_donation/blood_donation_view.dart';
@@ -20,6 +21,8 @@ import '../features/bmi/bmi_result_view.dart';
 import '../features/disease/disease_view.dart';
 import '../features/disease/each_disease_view.dart';
 import '../features/drug/each_drug_view.dart';
+import '../features/food_tips/each_food_tip_view.dart';
+import '../features/food_tips/food_tips_view.dart';
 import '../features/health_tools/all_tools_view.dart';
 import '../features/health_tools/drug_information/drug_information_view.dart';
 import '../features/health_tools/first_aid/each_first_aid_view.dart';
@@ -46,6 +49,8 @@ class Routes {
   static const String bMICalculatorView = '/b-mi-calculator-view';
   static const String bMIResultView = '/b-mi-result-view';
   static const String bloodDonationView = '/blood-donation-view';
+  static const String foodTipsView = '/food-tips-view';
+  static const String eachFoodTipView = '/each-food-tip-view';
   static const all = <String>{
     homeView,
     diseaseView,
@@ -62,6 +67,8 @@ class Routes {
     bMICalculatorView,
     bMIResultView,
     bloodDonationView,
+    foodTipsView,
+    eachFoodTipView,
   };
 }
 
@@ -84,6 +91,8 @@ class StackedRouter extends RouterBase {
     RouteDef(Routes.bMICalculatorView, page: BMICalculatorView),
     RouteDef(Routes.bMIResultView, page: BMIResultView),
     RouteDef(Routes.bloodDonationView, page: BloodDonationView),
+    RouteDef(Routes.foodTipsView, page: FoodTipsView),
+    RouteDef(Routes.eachFoodTipView, page: EachFoodTipView),
   ];
   @override
   Map<Type, StackedRouteFactory> get pagesMap => _pagesMap;
@@ -202,6 +211,22 @@ class StackedRouter extends RouterBase {
         settings: data,
       );
     },
+    FoodTipsView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => FoodTipsView(),
+        settings: data,
+      );
+    },
+    EachFoodTipView: (data) {
+      var args = data.getArgs<EachFoodTipViewArguments>(nullOk: false);
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => EachFoodTipView(
+          key: args.key,
+          foodTip: args.foodTip,
+        ),
+        settings: data,
+      );
+    },
   };
 }
 
@@ -249,4 +274,11 @@ class BMIResultViewArguments {
   final Key? key;
   final double bmi;
   BMIResultViewArguments({this.key, required this.bmi});
+}
+
+/// EachFoodTipView arguments holder class
+class EachFoodTipViewArguments {
+  final Key? key;
+  final FoodTip foodTip;
+  EachFoodTipViewArguments({this.key, required this.foodTip});
 }
