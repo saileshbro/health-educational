@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:health_educational/common/ui/components/drawer/drawer_viewmodel.dart';
+import 'package:health_educational/features/blood_donation/blood_donation_view.dart';
+import 'package:health_educational/features/blood_donation/blood_donation_view_model.dart';
 import 'package:health_educational/features/bmi/bmi_calculator_view.dart';
 import 'package:health_educational/features/bmi/bmi_calculator_view_model.dart';
 import 'package:health_educational/features/bmi/bmi_result_view.dart';
@@ -83,6 +85,9 @@ import 'package:stacked_services/stacked_services.dart';
   MaterialRoute(
     page: BMIResultView,
   ),
+  MaterialRoute(
+    page: BloodDonationView,
+  ),
 ], dependencies: [
   DependencyRegistration(
     classType: DioService,
@@ -140,6 +145,9 @@ import 'package:stacked_services/stacked_services.dart';
   ),
   Singleton(
     classType: DrugInformationViewModel,
+  ),
+  Singleton(
+    classType: BloodDonationViewModel,
   ),
   Singleton(
     classType: BMICalculatorViewModel,

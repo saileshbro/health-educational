@@ -14,6 +14,7 @@ import '../datamodels/models/drug/drug.dart';
 import '../datamodels/models/first_aid/first_aid.dart';
 import '../datamodels/models/new/new.dart';
 import '../datamodels/models/symptom/symptom.dart';
+import '../features/blood_donation/blood_donation_view.dart';
 import '../features/bmi/bmi_calculator_view.dart';
 import '../features/bmi/bmi_result_view.dart';
 import '../features/disease/disease_view.dart';
@@ -44,6 +45,7 @@ class Routes {
   static const String firstAidView = '/first-aid-view';
   static const String bMICalculatorView = '/b-mi-calculator-view';
   static const String bMIResultView = '/b-mi-result-view';
+  static const String bloodDonationView = '/blood-donation-view';
   static const all = <String>{
     homeView,
     diseaseView,
@@ -59,6 +61,7 @@ class Routes {
     firstAidView,
     bMICalculatorView,
     bMIResultView,
+    bloodDonationView,
   };
 }
 
@@ -80,6 +83,7 @@ class StackedRouter extends RouterBase {
     RouteDef(Routes.firstAidView, page: FirstAidView),
     RouteDef(Routes.bMICalculatorView, page: BMICalculatorView),
     RouteDef(Routes.bMIResultView, page: BMIResultView),
+    RouteDef(Routes.bloodDonationView, page: BloodDonationView),
   ];
   @override
   Map<Type, StackedRouteFactory> get pagesMap => _pagesMap;
@@ -189,6 +193,12 @@ class StackedRouter extends RouterBase {
           key: args.key,
           bmi: args.bmi,
         ),
+        settings: data,
+      );
+    },
+    BloodDonationView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => BloodDonationView(),
         settings: data,
       );
     },

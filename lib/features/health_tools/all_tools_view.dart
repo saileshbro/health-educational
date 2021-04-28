@@ -52,6 +52,9 @@ class AllToolsView extends StatelessWidget {
             KToolCard(
               imageUrl: "assets/images/icons/blooddonation.png",
               name: "Blood Donation Date",
+              onPressed: () => locator<NavigationService>().navigateTo(
+                Routes.bloodDonationView,
+              ),
             ),
             KToolCard(
               imageUrl: "assets/images/icons/water.png",
