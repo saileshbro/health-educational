@@ -1,23 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:health_educational/app/app.locator.dart';
-import 'package:health_educational/app/app.router.dart';
 
-import 'package:health_educational/datamodels/models/drug/drug.dart';
-import 'package:stacked_services/stacked_services.dart';
-
-class KDrugListTile extends StatelessWidget {
-  final Drug drug;
-  const KDrugListTile({
+class NameInitialListTile extends StatelessWidget {
+  final String label;
+  final void Function() onPressed;
+  const NameInitialListTile({
     Key? key,
-    required this.drug,
+    required this.label,
+    required this.onPressed,
   }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => locator<NavigationService>().navigateTo(
-        Routes.eachDrugView,
-        arguments: EachDrugViewArguments(drug: drug),
-      ),
+      onTap: onPressed,
       child: Material(
         borderRadius: BorderRadius.circular(5),
         elevation: 1.0,
@@ -32,7 +27,7 @@ class KDrugListTile extends StatelessWidget {
                 child: CircleAvatar(
                   radius: 23,
                   child: Text(
-                    drug.brandName[0],
+                    label[0],
                     style: TextStyle(
                       fontSize: 30,
                       color: Colors.white,
@@ -43,7 +38,7 @@ class KDrugListTile extends StatelessWidget {
               ),
               Expanded(
                 child: Text(
-                  drug.brandName,
+                  label,
                   style: Theme.of(context).textTheme.bodyText1?.copyWith(
                         fontSize: 20,
                       ),
