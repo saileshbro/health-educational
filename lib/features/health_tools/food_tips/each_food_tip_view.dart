@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:health_educational/datamodels/models/food_tip/food_tip.dart';
-import 'package:health_educational/features/food_tips/widgets/food_tip_header.dart';
-import 'package:health_educational/features/food_tips/widgets/food_tip_list.dart';
+import 'package:health_educational/features/health_tools/food_tips/widgets/food_tip_header.dart';
+import 'package:health_educational/features/health_tools/food_tips/widgets/food_tip_list.dart';
 
 class EachFoodTipView extends StatelessWidget {
   final FoodTip foodTip;

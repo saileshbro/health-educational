@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:health_educational/app/app.locator.dart';
 import 'package:health_educational/app/app.router.dart';
-import 'package:health_educational/features/bmi/gender_enum.dart';
+import 'package:health_educational/features/health_tools/bmi/gender_enum.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 

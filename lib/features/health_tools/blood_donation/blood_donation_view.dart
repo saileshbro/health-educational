@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:health_educational/app/app.locator.dart';
-import 'package:health_educational/features/blood_donation/blood_donation_view_model.dart';
-import 'package:health_educational/features/blood_donation/widgets/blood_donation_result.dart';
-import 'package:health_educational/features/blood_donation/widgets/donation_date_picker.dart';
-import 'package:health_educational/features/blood_donation/widgets/top_header.dart';
+import 'package:health_educational/features/health_tools/blood_donation/blood_donation_view_model.dart';
+import 'package:health_educational/features/health_tools/blood_donation/widgets/blood_donation_result.dart';
+import 'package:health_educational/features/health_tools/blood_donation/widgets/donation_date_picker.dart';
+import 'package:health_educational/features/health_tools/blood_donation/widgets/top_header.dart';
 import 'package:stacked/stacked.dart';
 
 class BloodDonationView extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:health_educational/datamodels/models/food_tip/food.dart';
-import 'package:health_educational/features/food_tips/widgets/food_card.dart';
+import 'package:health_educational/features/health_tools/food_tips/widgets/food_card.dart';
 
 class FoodTipList extends StatelessWidget {
   final List<Food> foods;

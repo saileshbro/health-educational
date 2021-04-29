@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:health_educational/features/bmi/gender_enum.dart';
+import 'package:health_educational/features/health_tools/bmi/gender_enum.dart';
 
 class BMIHeightChanger extends StatelessWidget {
   final Gender gender;

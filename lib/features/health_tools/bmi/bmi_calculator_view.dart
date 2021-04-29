@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:health_educational/app/app.locator.dart';
-import 'package:health_educational/features/bmi/bmi_calculator_view_model.dart';
-import 'package:health_educational/features/bmi/gender_enum.dart';
-import 'package:health_educational/features/bmi/widgets/bmi_gender_selector.dart';
-import 'package:health_educational/features/bmi/widgets/bmi_height_changer.dart';
-import 'package:health_educational/features/bmi/widgets/bmi_status_bar.dart';
-import 'package:health_educational/features/bmi/widgets/bmi_weight_changer.dart';
+import 'package:health_educational/features/health_tools/bmi/bmi_calculator_view_model.dart';
+import 'package:health_educational/features/health_tools/bmi/gender_enum.dart';
+import 'package:health_educational/features/health_tools/bmi/widgets/bmi_gender_selector.dart';
+import 'package:health_educational/features/health_tools/bmi/widgets/bmi_height_changer.dart';
+import 'package:health_educational/features/health_tools/bmi/widgets/bmi_status_bar.dart';
+import 'package:health_educational/features/health_tools/bmi/widgets/bmi_weight_changer.dart';
 import 'package:stacked/stacked.dart';
 
 class BMICalculatorView extends StatelessWidget {

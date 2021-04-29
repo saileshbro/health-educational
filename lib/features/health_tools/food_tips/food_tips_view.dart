@@ -3,7 +3,7 @@ import 'package:health_educational/app/app.locator.dart';
 import 'package:health_educational/app/app.router.dart';
 import 'package:health_educational/common/ui/widgets/name_initial_list_tile.dart';
 import 'package:health_educational/datamodels/response_models/food_tip/food_tips_response_model.dart';
-import 'package:health_educational/features/food_tips/food_tips_view_model.dart';
+import 'package:health_educational/features/health_tools/food_tips/food_tips_view_model.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
