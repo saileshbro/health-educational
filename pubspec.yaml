@@ -33,15 +33,15 @@ dependencies:
   intl: ^0.17.0
   json_annotation: ^4.0.1
   logger: ^1.0.0
-  stacked: ^2.0.2
-  stacked_services: ^0.8.2
+  stacked: ^2.1.1
+  stacked_services: ^0.8.5
 
 dev_dependencies:
-  build_runner: ^1.12.2
+  build_runner: ^2.0.1
   flutter_test:
     sdk: flutter
-  json_serializable: ^4.1.0
-  stacked_generator: ^0.3.3
+  json_serializable: ^4.1.1
+  stacked_generator: ^0.4.1
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

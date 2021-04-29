@@ -46,129 +46,133 @@ import 'package:health_educational/services/dio_service.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
 
-@StackedApp(routes: [
-  MaterialRoute(
-    page: HomeView,
-    initial: true,
-  ),
-  MaterialRoute(
-    page: DiseaseView,
-  ),
-  MaterialRoute(
-    page: SymptomView,
-  ),
-  MaterialRoute(
-    page: NewView,
-  ),
-  MaterialRoute(
-    page: EachDiseaseView,
-  ),
-  MaterialRoute(
-    page: EachNewView,
-  ),
-  MaterialRoute(
-    page: EachSymptomView,
-  ),
-  MaterialRoute(
-    page: EachDrugView,
-  ),
-  MaterialRoute(
-    page: EachFirstAidView,
-  ),
-  MaterialRoute(
-    page: AllToolsView,
-  ),
-  MaterialRoute(
-    page: DrugInformationView,
-  ),
-  MaterialRoute(
-    page: FirstAidView,
-  ),
-  MaterialRoute(
-    page: BMICalculatorView,
-  ),
-  MaterialRoute(
-    page: BMIResultView,
-  ),
-  MaterialRoute(
-    page: BloodDonationView,
-  ),
-  MaterialRoute(
-    page: FoodTipsView,
-  ),
-  MaterialRoute(
-    page: EachFoodTipView,
-  ),
-], dependencies: [
-  DependencyRegistration(
-    classType: DioService,
-    asType: Dio,
-    resolveUsing: DioService.getDioObject,
-  ),
-  DependencyRegistration(
-    classType: RAPIService,
-    asType: IAPIService,
-  ),
-  DependencyRegistration(
-    classType: RHomeRepository,
-    asType: IHomeRepository,
-  ),
-  DependencyRegistration(
-    classType: RDiseaseRepository,
-    asType: IDiseaseRepository,
-  ),
-  DependencyRegistration(
-    classType: RSymptomRepository,
-    asType: ISymptomRepository,
-  ),
-  DependencyRegistration(
-    classType: RNewRepository,
-    asType: INewRepository,
-  ),
-  DependencyRegistration(
-    classType: RDrugRepository,
-    asType: IDrugRepository,
-  ),
-  DependencyRegistration(
-    classType: RFirstAidRepository,
-    asType: IFirstAidRepository,
-  ),
-  DependencyRegistration(
-    classType: RFoodTipsRepository,
-    asType: IFoodTipsRepository,
-  ),
-  Factory(
-    classType: HomeViewModel,
-  ),
-  Singleton(
-    classType: DiseaseViewModel,
-  ),
-  Singleton(
-    classType: FirstAidViewModel,
-  ),
-  Singleton(
-    classType: SymptomViewModel,
-  ),
-  Singleton(
-    classType: NewViewModel,
-  ),
-  Singleton(
-    classType: NavigationService,
-  ),
-  Singleton(
-    classType: DrawerViewModel,
-  ),
-  Singleton(
-    classType: DrugInformationViewModel,
-  ),
-  Singleton(
-    classType: BloodDonationViewModel,
-  ),
-  Singleton(
-    classType: BMICalculatorViewModel,
-  ),
-  Singleton(
-    classType: FoodTipsViewModel,
-  ),
-])
+@StackedApp(
+  logger: const StackedLogger(),
+  routes: [
+    MaterialRoute(
+      page: HomeView,
+      initial: true,
+    ),
+    MaterialRoute(
+      page: DiseaseView,
+    ),
+    MaterialRoute(
+      page: SymptomView,
+    ),
+    MaterialRoute(
+      page: NewView,
+    ),
+    MaterialRoute(
+      page: EachDiseaseView,
+    ),
+    MaterialRoute(
+      page: EachNewView,
+    ),
+    MaterialRoute(
+      page: EachSymptomView,
+    ),
+    MaterialRoute(
+      page: EachDrugView,
+    ),
+    MaterialRoute(
+      page: EachFirstAidView,
+    ),
+    MaterialRoute(
+      page: AllToolsView,
+    ),
+    MaterialRoute(
+      page: DrugInformationView,
+    ),
+    MaterialRoute(
+      page: FirstAidView,
+    ),
+    MaterialRoute(
+      page: BMICalculatorView,
+    ),
+    MaterialRoute(
+      page: BMIResultView,
+    ),
+    MaterialRoute(
+      page: BloodDonationView,
+    ),
+    MaterialRoute(
+      page: FoodTipsView,
+    ),
+    MaterialRoute(
+      page: EachFoodTipView,
+    ),
+  ],
+  dependencies: [
+    LazySingleton(
+      classType: DioService,
+      asType: Dio,
+      resolveUsing: DioService.getDioObject,
+    ),
+    LazySingleton(
+      classType: RAPIService,
+      asType: IAPIService,
+    ),
+    LazySingleton(
+      classType: RHomeRepository,
+      asType: IHomeRepository,
+    ),
+    LazySingleton(
+      classType: RDiseaseRepository,
+      asType: IDiseaseRepository,
+    ),
+    LazySingleton(
+      classType: RSymptomRepository,
+      asType: ISymptomRepository,
+    ),
+    LazySingleton(
+      classType: RNewRepository,
+      asType: INewRepository,
+    ),
+    LazySingleton(
+      classType: RDrugRepository,
+      asType: IDrugRepository,
+    ),
+    LazySingleton(
+      classType: RFirstAidRepository,
+      asType: IFirstAidRepository,
+    ),
+    LazySingleton(
+      classType: RFoodTipsRepository,
+      asType: IFoodTipsRepository,
+    ),
+    LazySingleton(
+      classType: HomeViewModel,
+    ),
+    LazySingleton(
+      classType: DiseaseViewModel,
+    ),
+    LazySingleton(
+      classType: FirstAidViewModel,
+    ),
+    LazySingleton(
+      classType: SymptomViewModel,
+    ),
+    LazySingleton(
+      classType: NewViewModel,
+    ),
+    LazySingleton(
+      classType: NavigationService,
+    ),
+    LazySingleton(
+      classType: DrawerViewModel,
+    ),
+    Factory(
+      classType: DrugInformationViewModel,
+    ),
+    LazySingleton(
+      classType: BloodDonationViewModel,
+    ),
+    LazySingleton(
+      classType: BMICalculatorViewModel,
+    ),
+    LazySingleton(
+      classType: FoodTipsViewModel,
+    ),
+  ],
+)
 class App {}

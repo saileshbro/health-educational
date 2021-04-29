@@ -41,24 +41,26 @@ import '../services/dio_service.dart';
 final locator = StackedLocator.instance;
 
 void setupLocator() {
-  locator.registerSingleton<Dio>(DioService.getDioObject());
-  locator.registerSingleton<IAPIService>(RAPIService());
-  locator.registerSingleton<IHomeRepository>(RHomeRepository());
-  locator.registerSingleton<IDiseaseRepository>(RDiseaseRepository());
-  locator.registerSingleton<ISymptomRepository>(RSymptomRepository());
-  locator.registerSingleton<INewRepository>(RNewRepository());
-  locator.registerSingleton<IDrugRepository>(RDrugRepository());
-  locator.registerSingleton<IFirstAidRepository>(RFirstAidRepository());
-  locator.registerSingleton<IFoodTipsRepository>(RFoodTipsRepository());
-  locator.registerFactory(() => HomeViewModel());
-  locator.registerSingleton(DiseaseViewModel());
-  locator.registerSingleton(FirstAidViewModel());
-  locator.registerSingleton(SymptomViewModel());
-  locator.registerSingleton(NewViewModel());
-  locator.registerSingleton(NavigationService());
-  locator.registerSingleton(DrawerViewModel());
-  locator.registerSingleton(DrugInformationViewModel());
-  locator.registerSingleton(BloodDonationViewModel());
-  locator.registerSingleton(BMICalculatorViewModel());
-  locator.registerSingleton(FoodTipsViewModel());
+  locator.registerLazySingleton<Dio>(() => DioService.getDioObject());
+  locator.registerLazySingleton<IAPIService>(() => RAPIService());
+  locator.registerLazySingleton<IHomeRepository>(() => RHomeRepository());
+  locator.registerLazySingleton<IDiseaseRepository>(() => RDiseaseRepository());
+  locator.registerLazySingleton<ISymptomRepository>(() => RSymptomRepository());
+  locator.registerLazySingleton<INewRepository>(() => RNewRepository());
+  locator.registerLazySingleton<IDrugRepository>(() => RDrugRepository());
+  locator
+      .registerLazySingleton<IFirstAidRepository>(() => RFirstAidRepository());
+  locator
+      .registerLazySingleton<IFoodTipsRepository>(() => RFoodTipsRepository());
+  locator.registerLazySingleton(() => HomeViewModel());
+  locator.registerLazySingleton(() => DiseaseViewModel());
+  locator.registerLazySingleton(() => FirstAidViewModel());
+  locator.registerLazySingleton(() => SymptomViewModel());
+  locator.registerLazySingleton(() => NewViewModel());
+  locator.registerLazySingleton(() => NavigationService());
+  locator.registerLazySingleton(() => DrawerViewModel());
+  locator.registerFactory(() => DrugInformationViewModel());
+  locator.registerLazySingleton(() => BloodDonationViewModel());
+  locator.registerLazySingleton(() => BMICalculatorViewModel());
+  locator.registerLazySingleton(() => FoodTipsViewModel());
 }
