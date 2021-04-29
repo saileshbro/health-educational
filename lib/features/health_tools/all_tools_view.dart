@@ -59,10 +59,6 @@ class AllToolsView extends StatelessWidget {
                 Routes.bloodDonationView,
               ),
             ),
-            KToolCard(
-              imageUrl: "assets/images/icons/water.png",
-              name: "Daily Water Requirement",
-            ),
           ],
         ),
       ),
